@@ -1,0 +1,4 @@
+rootProject.name = 'restful-booker-e2etests'
+include 'e2e-api-tests'
+include 'e2e-ui-tests'
+
