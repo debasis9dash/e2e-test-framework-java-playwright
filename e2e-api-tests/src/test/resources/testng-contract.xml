@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Restful Booker Test Suite" parallel="classes" thread-count="5">
+
+    <!-- Contract tests run first — fail fast gate -->
+    <test name="Contract Tests" preserve-order="true">
+        <classes>
+            <class name="com.db.crypto.tests.contracts.BookingContractTest"/>
+        </classes>
+    </test>
+
+    <!-- Functional tests run after contracts pass -->
+    <test name="Functional Tests" parallel="methods" thread-count="5">
+        <classes>
+            <class name="com.db.crypto.tests.BookingTest"/>
+        </classes>
+    </test>
+
+</suite>
