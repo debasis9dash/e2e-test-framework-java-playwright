@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contract Test Suite" preserve-order="true">
+
+    <test name="Contract Tests">
+        <classes>
+            <class name="com.db.crypto.tests.contracts.BookingContractTest"/>
+        </classes>
+    </test>
+
+</suite>
