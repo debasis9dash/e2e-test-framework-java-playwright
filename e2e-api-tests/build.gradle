@@ -29,7 +29,19 @@ dependencies {
 
 test {
     useTestNG() {
-        suites 'src/test/resources/testng.xml'
+        // Default to full suite
+        // Override with -Dtest.suite=contract or -Dtest.suite=functional
+        def suite = System.getProperty('test.suite', 'all')
+        switch (suite) {
+            case 'contract':
+                suites 'src/test/resources/testng-contract.xml'
+                break
+            case 'functional':
+                suites 'src/test/resources/testng-functional.xml'
+                break
+            default:
+                suites 'src/test/resources/testng.xml'
+        }
     }
     testLogging {
         events 'passed', 'skipped', 'failed'
